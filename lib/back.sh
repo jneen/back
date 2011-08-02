@@ -9,6 +9,8 @@ back::next() {
   if [[ -z "$BACK_MIDDLEWARE" ]]; then
     ( $BACK_APP )
   else
+    # NB: the input redirect makes this a new subshell,
+    # so env. variables from higher scopes are protected.
     {
       local top_middleware="$(read)"
       BACK_MIDDLWARE="$(cat -)" $top_middleware
