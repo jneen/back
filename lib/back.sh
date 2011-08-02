@@ -18,7 +18,7 @@ back::next() {
 
 back::run() {
   export BACK_APP="$@"
-  back::callback
+  back::next
 }
 
 back::header() {
@@ -28,3 +28,4 @@ back::header() {
 back::start_response() {
   echo -n "\r\n"
 }
+
