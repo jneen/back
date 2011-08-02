@@ -21,11 +21,6 @@ back::run() {
   back::next
 }
 
-back::header() {
-  echo -n "$*\r\n"
-}
+back::header() { echo -n "$*\r\n" ;}
 
-back::start_response() {
-  echo -n "\r\n"
-}
-
+back::start_response() { back::header ;}
